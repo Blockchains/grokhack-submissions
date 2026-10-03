@@ -1,0 +1,18 @@
+{
+  "project": "Example: Grok Release Radar",
+  "tagline": "Daily digest of releases across Grok/xAI integrations, summarised by Grok.",
+  "team": [{ "name": "Your Name", "github": "your-github-handle", "role": "builder" }],
+  "track": "open",
+  "partner_platforms": ["github"],
+  "repo": "https://github.com/Blockchains/grokhack-submissions",
+  "demo_url": "https://blockchains.github.io/grok-release-radar/",
+  "video_url": "",
+  "grok": {
+    "models": ["grok-4.6"],
+    "features": ["structured_output"],
+    "sdk": "xai-sdk (python)"
+  },
+  "license": "MIT",
+  "built_during_hackathon": "Everything in this repository unless listed here.",
+  "status": "draft"
+}

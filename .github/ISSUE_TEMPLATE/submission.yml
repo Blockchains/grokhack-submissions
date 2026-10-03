@@ -1,0 +1,19 @@
+name: Grok Hack submission
+description: Register or update a submission
+title: "[submission] <project name>"
+labels: ["submission"]
+body:
+  - type: input
+    id: repo
+    attributes: { label: Repository URL, placeholder: "https://github.com/..." }
+    validations: { required: true }
+  - type: input
+    id: demo
+    attributes: { label: Live demo URL }
+  - type: input
+    id: video
+    attributes: { label: Demo video URL }
+  - type: textarea
+    id: grok
+    attributes: { label: How Grok is used, description: Models and features (tool calling, live search, structured output, vision, voice) }
+    validations: { required: true }

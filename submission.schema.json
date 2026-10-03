@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "The Grok Hack submission",
+  "type": "object",
+  "required": ["project", "tagline", "team", "track", "repo", "grok", "license", "status"],
+  "properties": {
+    "project": { "type": "string", "minLength": 2, "maxLength": 80 },
+    "tagline": { "type": "string", "minLength": 10, "maxLength": 200 },
+    "team": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["name", "github"],
+      "properties": { "name": { "type": "string" }, "github": { "type": "string", "pattern": "^[A-Za-z0-9-]{1,39}$" }, "role": { "type": "string" } } } },
+    "track": { "type": "string", "enum": ["open", "partner-platform", "agents", "voice", "vision", "data", "finance", "productivity", "build-design", "sales-crm", "marketing", "talent"] },
+    "partner_platforms": { "type": "array", "items": { "type": "string" } },
+    "repo": { "type": "string", "pattern": "^https://github\\.com/[^/]+/[^/]+$" },
+    "demo_url": { "type": "string" },
+    "video_url": { "type": "string" },
+    "grok": { "type": "object", "required": ["models", "features"],
+      "properties": { "models": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^grok-" } },
+        "features": { "type": "array", "items": { "type": "string", "enum": ["chat", "streaming", "tool_calling", "live_search", "structured_output", "vision", "image_generation", "video_generation", "voice", "reasoning", "embeddings", "mcp", "batch"] } },
+        "sdk": { "type": "string" } } },
+    "license": { "type": "string", "minLength": 2 },
+    "built_during_hackathon": { "type": "string" },
+    "status": { "type": "string", "enum": ["draft", "submitted"] }
+  }
+}

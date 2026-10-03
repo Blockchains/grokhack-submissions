@@ -1,0 +1,11 @@
+{
+  "name": "grokhack-starter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.mjs",
+    "test": "node --test",
+    "e2e": "node e2e.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
