@@ -1,0 +1,2 @@
+# Intentional fake key literal used by the e2e "needs key" check in the first commit (not a secret).
+458a92347b02a08b7de9a886ae637fe6725b986e:starter/e2e.mjs:generic-api-key:7

@@ -4,7 +4,7 @@ const key = process.env.XAI_API_KEY ?? ''
 const model = process.env.XAI_MODEL ?? 'grok-4.6'
 try {
   let text = ''
-  for await (const t of streamChat({ apiKey: key || 'xai-invalid-key-for-e2e', model, messages: [{ role: 'user', content: 'Reply with exactly: pong' }] })) text += t
+  for await (const t of streamChat({ apiKey: key || 'not-a-real-key', model, messages: [{ role: 'user', content: 'Reply with exactly: pong' }] })) text += t
   if (!key) { console.error('FAIL: unauthenticated request succeeded'); process.exit(1) }
   if (!text) { console.error('FAIL: empty reply'); process.exit(1) }
   console.log(`PASS (live): ${JSON.stringify(text.slice(0, 60))}`)
