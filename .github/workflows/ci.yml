@@ -24,7 +24,6 @@ jobs:
   starter:
     name: Starter tests + e2e (api.x.ai)
     runs-on: ubuntu-latest
-    if: hashFiles('starter/package.json') != ''
     defaults: { run: { working-directory: starter } }
     steps:
       - uses: actions/checkout@v4
