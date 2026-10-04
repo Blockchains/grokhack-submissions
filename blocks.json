@@ -1,0 +1,84 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Blockchains/.github/main/docs/blocks.schema.json",
+  "schema_version": "1.0",
+  "name": "grokhack-submissions",
+  "repo": "Blockchains/grokhack-submissions",
+  "summary": "Template repository for The Grok Hack entries: submission.json validated against submission.schema.json, a Node 22 streaming-chat starter for the xAI API, judging notes, and CI that validates, builds/tests, runs a real api.x.ai e2e and scans for secrets.",
+  "kind": [
+    "template"
+  ],
+  "stability": "stable",
+  "license": "MIT",
+  "entrypoints": [
+    {
+      "type": "git",
+      "name": "Use this template",
+      "ref": "https://github.com/new?template_name=grokhack-submissions&template_owner=Blockchains",
+      "usage": "GitHub template"
+    },
+    {
+      "type": "file",
+      "name": "submission.schema.json",
+      "ref": "submission.schema.json",
+      "usage": "required: project, tagline, team, track, repo, grok, license, status"
+    },
+    {
+      "type": "file",
+      "name": "starter/",
+      "ref": "starter/index.mjs",
+      "usage": "cd starter && npm ci && npm test && npm run e2e"
+    }
+  ],
+  "inputs": [
+    {
+      "name": "submission.json",
+      "type": "JSON",
+      "description": "validated by scripts/validate_submission.py"
+    },
+    {
+      "name": "XAI_API_KEY",
+      "type": "secret"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "validated entry repo",
+      "type": "repo"
+    }
+  ],
+  "deps": [
+    "python3",
+    "node 22"
+  ],
+  "compatible_with": [
+    {
+      "repo": "Blockchains/grokhack-forge",
+      "how": "compose the app first, then submit with this template"
+    },
+    {
+      "repo": "Blockchains/hackathon-entry-template",
+      "how": "generic (non-Grok) hackathon template"
+    },
+    {
+      "repo": "Blockchains/hackathons",
+      "how": "tracker issues"
+    }
+  ],
+  "tests": {
+    "command": "python3 scripts/validate_submission.py submission.json && cd starter && npm ci && npm test && npm run e2e",
+    "ci": ".github/workflows/ci.yml",
+    "network": true
+  },
+  "env": [
+    {
+      "name": "XAI_API_KEY",
+      "required": false,
+      "purpose": "starter e2e live answer"
+    }
+  ],
+  "docs": {
+    "readme": "README.md",
+    "agents": "AGENTS.md",
+    "llms": "llms.txt"
+  }
+}

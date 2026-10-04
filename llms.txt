@@ -1,0 +1,23 @@
+# grokhack-submissions
+
+> Template repository for The Grok Hack entries: submission.json validated against submission.schema.json, a Node 22 streaming-chat starter for the xAI API, judging notes, and CI that validates, builds/tests, runs a real api.x.ai e2e and scans for secrets.
+
+## Docs
+
+- [README](https://raw.githubusercontent.com/Blockchains/grokhack-submissions/main/README.md): overview, install and the 'Use as a building block' section
+- [AGENTS.md](https://raw.githubusercontent.com/Blockchains/grokhack-submissions/main/AGENTS.md): setup, build/test commands, structure map, conventions and rules for AI coding agents
+- [blocks.json](https://raw.githubusercontent.com/Blockchains/grokhack-submissions/main/blocks.json): machine-readable building-block manifest (entrypoints, inputs, outputs, deps, compatible blocks)
+
+## Key files
+
+- [submission.schema.json](https://github.com/Blockchains/grokhack-submissions/blob/main/submission.schema.json): schema
+- [starter/grok.mjs](https://github.com/Blockchains/grokhack-submissions/blob/main/starter/grok.mjs): xAI streaming client
+- [docs/JUDGING.md](https://github.com/Blockchains/grokhack-submissions/blob/main/docs/JUDGING.md): judging
+
+## Related
+
+- [Build with Blocks](https://github.com/Blockchains/.github/blob/main/docs/BUILD-WITH-BLOCKS.md): how to assemble projects from Blockchains repos
+- [Org llms.txt](https://blockchains.github.io/llms.txt) · [blocks catalogue](https://blockchains.github.io/blocks.json)
+- [Blockchains/grokhack-forge](https://github.com/Blockchains/grokhack-forge): compose the app first, then submit with this template
+- [Blockchains/hackathon-entry-template](https://github.com/Blockchains/hackathon-entry-template): generic (non-Grok) hackathon template
+- [Blockchains/hackathons](https://github.com/Blockchains/hackathons): tracker issues
